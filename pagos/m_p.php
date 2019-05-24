@@ -58,7 +58,7 @@ body {
   	</tr>
     <tr>
       <td scope="row"><?php echo $fila["id_pagos"] ?></td>
-      <td><?php echo $fila["id_equipos"] ?></td>
+      <td><?php echo $fila["id_equipo"] ?></td>
       <td><?php echo $fila["nombre"] ?></td>
       <td><?php echo $fila["fecha"] ?></td>
       <td><?php echo $fila["cantidad"] ?></td>
