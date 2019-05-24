@@ -13,16 +13,26 @@ session_start();
 
 <style type="text/css"> 
 
-body{
-	margin-top: 5%;
+
+  body {
+  background-image: url("img/1.jpg");
+  background-repeat: no-repeat;
+
 }
+  @media (max-width: 600px) {
+  body {
+    background-image: url("img/1.1.jpg");
+    background-repeat: no-repeat;
+  }
+  
+  @media (max-width: 600px) {
 
 </style>
 
 </head>
 <body>
 
-<form action="edit_estadisticas_submit" method="post" accept-charset="utf-8">
+<form action="act_est.php" method="post" accept-charset="utf-8">
 <?php 
 $cod=$_GET["parametro"];
 require "controldb.php";
@@ -53,11 +63,12 @@ foreach ($data as $filas ) {
   </thead>
   <tbody>
     <tr>
-   <h1>Datos Estadisticos hasta la jornada: <?php echo $filas["jornada"] ?></h1>
+<div class="alert alert-success font-weight-bold" role="alert">
+ Datos Estadisticos hasta la jornada: <?php echo $filas["jornada"] ?></div>
     <tr>
       
       <td><input type="text" class="col-sm-6 form-control"value="<?php echo $cod ?>" name=""></td>
-      <td><input type="text"   value="<?php echo $filas["nombre"] ?>" class="col-sm-6 form-control"></td>
+      <td><input type="text" value="<?php echo $filas["nombre"] ?>" class="col-sm-8 form-control"></td>
       <td><input type="text" value="<?php echo $filas["jornada"] ?>" class="col-sm-6 form-control"></td>
       <td><input type="text" value="<?php echo $filas["PJ"] ?>" class="col-sm-6 form-control"></td>
       <td><input type="text" value="<?php echo $filas["PG"] ?>" class="col-sm-6 form-control"></td>   
@@ -69,31 +80,23 @@ foreach ($data as $filas ) {
     </tr>
     <tr>
 
-      <td><input type="text" class="col-sm-6 form-control"></td>
-      <td><input type="text" class="col-sm-6 form-control"></td>
-      <td><input type="number" class="col-sm-6 form-control"></td>
-      <td><input type="number" class="col-sm-6 form-control"></td>
-      <td><input type="number" class="col-sm-6 form-control"></td>   
-      <td><input type="number" class="col-sm-6 form-control"></td>
-      <td><input type="number" class="col-sm-6 form-control"></td>
-      <td><input type="number" class="col-sm-6 form-control"></td>
-      <td><input type="number" class="col-sm-6 form-control"></td> 
-       <td><input type="number" class="col-sm-6 form-control"></td>
+     <td><input type="text" name="id_equipos" class="col-sm-6 form-control"value="<?php echo $cod ?>" name=""></td>
+      <td><input type="text" name="nombre" value="<?php echo $filas["nombre"] ?>" class="col-sm-8 form-control"></td>
+      <td><input type="text" name="jornada" class="col-sm-6 form-control"></td>
+      <td><input type="text" name="PJ" class="col-sm-6 form-control"></td>
+      <td><input type="text" name="PG" class="col-sm-6 form-control"></td>
+      <td><input type="text" name="PE" class="col-sm-6 form-control"></td>   
+      <td><input type="text" name="PP" class="col-sm-6 form-control"></td>
+      <td><input type="text" name="GF" class="col-sm-6 form-control"></td>
+      <td><input type="text" name="GC" class="col-sm-6 form-control"></td>
+      <td><input type="text" name="PUNTOS" class="col-sm-6 form-control"></td> 
     </tr>
-    <tr>
-      <td><input type="text" class="col-sm-6 form-control"></td>
-      <td><input type="text" class="col-sm-6 form-control"></td>
-      <td><input type="number" class="col-sm-6 form-control"></td>
-      <td><input type="number" class="col-sm-6 form-control"></td>
-      <td><input type="number" class="col-sm-6 form-control"></td>   
-      <td><input type="number" class="col-sm-6 form-control"></td>
-      <td><input type="number" class="col-sm-6 form-control"></td>
-      <td><input type="number" class="col-sm-6 form-control"></td>
-      <td><input type="number" class="col-sm-6 form-control"></td> 
-       <td><input type="number" class="col-sm-6 form-control"></td>
-    </tr>
+
   </tbody>
 </table>
+
+<input type="submit" class="btn btn-success" value="Actualizar">
+      <a href="home.php"><button type="button" class="btn btn-danger">Regresar</button></a>
 
 <?php
 }

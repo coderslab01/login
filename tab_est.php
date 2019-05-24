@@ -32,7 +32,9 @@
       <th scope="col">PJ</th>
       <th scope="col">PG</th>
       <th scope="col">PE</th>
-      <th scope="col">PP</th> 
+      <th scope="col">PP</th>
+      <th scope="col">GF</th>
+      <th scope="col">GC</th>
       <th scope="col">PUNTOS</th>
       <th scope="col"><a href="home.php"><button type="button"class="btn btn-success">Home</button></a></th>
     </tr>
